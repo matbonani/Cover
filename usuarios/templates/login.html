@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+
+  <body class="text-center">
+
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+      <header class="masthead mb-auto">
+        <div class="inner">
+          <h3 class="masthead-brand">Cover</h3>
+          <nav class="nav nav-masthead justify-content-center">
+            <a class="nav-link" href="{% url 'index' %}">Home</a>
+            <a class="nav-link active" href="{% url 'login' %}">login</a>
+            <a class="nav-link" href="{% url 'registrar' %}">cadastre-se</a>
+          </nav>
+        </div>
+
+      </header>
+
+      <form method="post" autocomplete="off">
+        {% csrf_token %}
+
+        <h3 class="cover-heading">Informe seus dados</h3>
+
+        <label for="username" class=""></label>
+        <input type="username" id="username" name="username" class="lead"
+               placeholder="usuário" required autofocus>
+        <br>
+        <br>
+
+        <label for="password" class=""></label>
+        <input type="password" id="password" name="password" class="lead"
+               placeholder="senha" required>
+        <br>
+        <br>
+        <button class="btn btn-lg btn-secondary" type="submit">Acessar</button>
+        <p class="mt-5 mb-3 text-muted">&copy; {% now 'Y'%}</p>
+      </form>
+
+
+{% endblock %}
