@@ -18,12 +18,29 @@
         </div>
 
       </header>
-
       <form method="post" autocomplete="off">
         {% csrf_token %}
-        {{ form|crispy }}
-        <button type="submit" class="btn btn-lg btn-secondary">cadastrar</button>
 
+        <h3 class="cover-heading">Cadastre-se</h3>
+
+        <label for="username" class=""></label>
+        <input type="username" id="username" name="username" class="lead"
+               placeholder="Usuário" required autofocus>
+        <br>
+        <br>
+
+        <label for="password1" class=""></label>
+        <input type="password" id="password1" name="password1" class="lead"
+               placeholder="Nova senha" required>
+        <br>
+        <br>
+        <label for="password2" class=""></label>
+        <input type="password" id="password2" name="password2" class="lead"
+               placeholder="Confirme a senha" required>
+        <br>
+        <br>
+        <button class="btn btn-lg btn-secondary" type="submit">Acessar</button>
+        <p class="mt-5 mb-3 text-muted">&copy; {% now 'Y'%}</p>
       </form>
 
 
